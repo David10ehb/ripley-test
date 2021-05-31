@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Destinados",
+        "icon": "",
+        "url": "addressee"
+    },
+    {
+        "title": "Transferencias",
+        "icon": "",
+        "url": "transfers"
+    },
+    {
+        "title": "Historial",
+        "icon": "",
+        "url": "transfers-list"
+    }
+]

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <ng-container *ngIf="loading">
+        <h1> Nuevo Destinatario </h1>
+        <form [formGroup]="addresseeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Rut</label>
+            <input type="text" class="form-control" id="rut" formControlName='rut' placeholder="ingrese rut">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Nombre Completo</label>
+            <input type="text" class="form-control" id="name" formControlName='name' placeholder="ingresos nombre">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo Electronico</label>
+            <input type="email" class="form-control" id="mail" formControlName='mail' placeholder="ingrese correo electronico">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">numero de telefono</label>
+            <input type="text" class="form-control" id="phone" formControlName='phone' placeholder="ingrese numero telefonico">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Banco destino</label>
+            <select class="form-control" formControlName='bank'>
+              <option *ngFor="let bank of this.databanks.banks" [ngValue]="bank" >{{ bank.name }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Tipo de cuenta</label>
+            <select class="form-control" formControlName='accountType'>
+              <option *ngFor="let account of this.dataAccount.accounts" [ngValue]="account" > {{ account }} </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Numero de cuenta</label>
+            <input type="text" class="form-control" id="accountNumber" formControlName='accountNumber' placeholder="ingrese numero de cuenta">
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+        </form>
+      </ng-container>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
